@@ -270,7 +270,7 @@
       margin-left: 0.5rem;
     }
 
-    .elsewhere {
+    .links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem 1.5rem;
@@ -278,12 +278,12 @@
       font-size: 0.85rem;
     }
 
-    .elsewhere a {
+    .links a {
       color: var(--ink);
       text-decoration: none;
     }
 
-    .elsewhere a:hover {
+    .links a:hover {
       color: var(--accent);
     }
 
@@ -313,8 +313,8 @@
     <nav>
       <span class="name">Sanskar Sonwal</span>
       <div class="links">
-        <a href="#projects">Projects</a>
-        <!-- <a href="#elsewhere">Elsewhere</a> -->
+        <!-- <a href="#projects">Projects</a> -->
+        <!-- <a href="#links">links</a> -->
         <label class="switch">
           <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <g fill="#ffd43b">
@@ -336,16 +336,23 @@
     </nav>
 
     <h1>Hey, I'm Sanskar<span class="cursor">&nbsp;</span></h1>
+    <!-- <p class="lede">
+      Learning how smart contracts, DeFi and NFT actually work, from the ground up.
+      Right now that means <a href="#">Rust</a>
+      and building on <a href="#">Solana</a>. -->
+
     <p class="lede">
-      Learning how systems actually work, from the ground up.
-      Right now that means <a href="#">Rust</a> — ownership, lifetimes, the borrow checker —
-      and building on <a href="#">Solana</a>.
+      Learning how smart contracts, DeFi, and NFTs actually work, from the ground up.
+      Building on Rust & Solana — with growing interest in
+      payments, DePIN, and real-world asset tokenization.
+    </p>
     </p>
     <p class="lede">
       I write code to understand it, not just to ship it.
     </p>
     <p class="lede">
-      Drawn to fintech — where systems design meets real financial infrastructure.
+      Drawn to fintech
+      <!-- — where systems design meets real financial infrastructure. -->
     </p>
 
 
@@ -354,31 +361,45 @@
       <ul class="list">
         <!-- <li>Working through Rust's memory model — ownership, borrowing, lifetimes<span class="tag">deep dive</span></li> -->
         <li>Building Solana programs with Anchor<span class="tag">learning</span></li>
-        <!-- <li>First year, Computer Science<span class="tag">2026</span></li> -->
         <li>Aiming to grow into a Rust engineering / Solana security role<span class="tag">goal</span></li>
+        <li>Intrigued by AI agents, and enjoy building and working with them<span class="tag">interest</span></li>
       </ul>
+
+
     </section>
 
-    <section id="projects">
+    <!-- <section id="projects">
       <div class="eyebrow">Building</div>
       <ul class="list">
         <li><a href="#">[project name] — link here</a><span class="tag">[stack]</span></li>
         <li><a href="#">[project name] — link here</a><span class="tag">[stack]</span></li>
         <li><a href="#">[project name] — link here</a><span class="tag">[stack]</span></li>
       </ul>
-    </section>
+    </section> -->
 
-    <section id="elsewhere">
-      <div class="eyebrow">Elsewhere</div>
-      <div class="elsewhere">
-        <a href="#">GitHub ↗</a>
-        <a href="#">Twitter/X ↗</a>
-        <a href="#">LinkedIn ↗</a>
-        <a href="mailto:you@example.com">Email ↗</a>
+    <!-- <section id="links">
+      <div class="eyebrow">Links</div>
+      <div class="links">
+        <a href="https://github.com/skarekroe666">GitHub ↗</a>
+        <a href="https://x.com/Sanskar00611">Twitter/X ↗</a>
+        <a href="mailto:sanskar.sonwal06@gmail.com">Email ↗</a>
       </div>
-    </section>
+    </section> -->
 
-    <footer>built by hand, not a template</footer>
+    <footer>
+      <section id="links">
+        <div class="eyebrow">Links</div>
+        <div class="links">
+          <a href="https://github.com/skarekroe666">GitHub ↗</a>
+          <a href="https://x.com/Sanskar00611">Twitter/X ↗</a>
+          <!-- <a href="#">LinkedIn ↗</a> -->
+          <a href="mailto:sanskar.sonwal06@gmail.com">Email ↗</a>
+        </div>
+      </section>
+      <br>
+
+      <p>built by hand, not a template</p>
+    </footer>
   </div>
 
   <script>
