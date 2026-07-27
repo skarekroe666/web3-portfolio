@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanskar Sonwal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1117;
+      --ink: #F5F4EF;
+      --ink-soft: #8B95A1;
+      --accent: #58A6FF;
+      --line: #30363D;
+      --button-bg: rgba(255, 255, 255, 0.08);
+      --button-border: rgba(255, 255, 255, 0.16);
+    }
+
+    body.light-mode {
+      --bg: #F5F4EF;
+      --ink: #181A17;
+      --ink-soft: #5A5D57;
+      --accent: #2F6F4E;
+      --line: #DAD7CC;
+      --button-bg: rgba(0, 0, 0, 0.05);
+      --button-border: rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+
+    nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      color: var(--ink-soft);
+      margin-bottom: 4rem;
+    }
+
+    .mode-toggle {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.05rem;
+      color: var(--ink);
+      background: var(--button-bg);
+      border: 1px solid var(--button-border);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .mode-toggle:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .mode-toggle .icon {
+      display: inline-flex;
+      transition: transform 0.35s ease;
+    }
+
+    body.light-mode .mode-toggle .icon {
+      transform: rotate(180deg);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav .name {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .lede {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 34rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .lede a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.5em;
+      background: var(--accent);
+      margin-left: 2px;
+      animation: blink 1.1s steps(2) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    section {
+      margin-top: 3.25rem;
+    }
+
+    .eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    ul.list {
+      list-style: none;
+    }
+
+    ul.list li {
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.98rem;
+    }
+
+    ul.list li:last-child {
+      border-bottom: none;
+    }
+
+    ul.list a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    ul.list a:hover {
+      border-color: var(--ink);
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      margin-left: 0.5rem;
+    }
+
+    .elsewhere {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .elsewhere a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .elsewhere a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width:480px) {
+      .wrap {
+        padding: 3.5rem 1.25rem 3rem;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav>
+      <span class="name">Sanskar Sonwal</span>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#elsewhere">Elsewhere</a>
+      </div>
+      <button class="mode-toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode">
+        <span class="icon">🌙</span>
+      </button>
+    </nav>
+
+    <h1>Hey, I'm Sanskar<span class="cursor">&nbsp;</span></h1>
+    <p class="lede">
+      CS student learning how systems actually work, from the ground up.
+      Right now that means <a href="#">Rust</a> — ownership, lifetimes, the borrow checker —
+      and building on <a href="#">Solana</a>.
+    </p>
+    <p class="lede">
+      I write code to understand it, not just to ship it.
+    </p>
+
+    <section id="now">
+      <div class="eyebrow">Now</div>
+      <ul class="list">
+        <li>Working through Rust's memory model — ownership, borrowing, lifetimes<span class="tag">deep dive</span></li>
+        <li>Building Solana programs with Anchor<span class="tag">learning</span></li>
+        <li>First year, Computer Science<span class="tag">2026</span></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <div class="eyebrow">Building</div>
+      <ul class="list">
+        <li><a href="#">Voting program — Anchor / Solana</a><span class="tag">PDAs, account state</span></li>
+        <li><a href="#">Project two</a><span class="tag">stack</span></li>
+        <li><a href="#">Project three</a><span class="tag">stack</span></li>
+      </ul>
+    </section>
+
+    <section id="elsewhere">
+      <div class="eyebrow">Elsewhere</div>
+      <div class="elsewhere">
+        <a href="#">GitHub ↗</a>
+        <a href="#">Twitter/X ↗</a>
+        <a href="#">Email ↗</a>
+      </div>
+    </section>
+
+    <footer>built by hand, not a template</footer>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+    const icon = toggleButton.querySelector('.icon');
+
+    function updateToggleIcon() {
+      if (body.classList.contains('light-mode')) {
+        icon.textContent = '☀️';
+        toggleButton.setAttribute('aria-label', 'Switch to dark mode');
+      } else {
+        icon.textContent = '🌙';
+        toggleButton.setAttribute('aria-label', 'Switch to light mode');
+      }
+    }
+
+    function setDefaultTheme() {
+      body.classList.remove('light-mode');
+      updateToggleIcon();
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      updateToggleIcon();
+    });
+
+    setDefaultTheme();
+  </script>
+</body>
+
+</html>
